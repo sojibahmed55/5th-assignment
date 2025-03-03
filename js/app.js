@@ -8,13 +8,27 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
- 
   let clearHistoryBtn = document.getElementById("clear-history");
   if (clearHistoryBtn) {
     clearHistoryBtn.addEventListener("click", function () {
       let activityLog = document.getElementById("activity-logs");
       activityLog.innerHTML = "";
-      alert("Activity Log Cleared Successfully!");
+    });
+  }
+
+  let pTag = document.getElementById("to-next");
+  if (pTag) {
+    pTag.addEventListener("click", function () {
+      setTimeout(function () {
+        window.location.href = "newpages.html";
+      }, 1000);
+    });
+  }
+
+  let backButton = document.getElementById("back-btn");
+  if (backButton) {
+    backButton.addEventListener("click", function () {
+      window.history.back();
     });
   }
 });
